@@ -25,3 +25,9 @@ esiea_blog_edit:
 esiea_blog_delete:
     path:     /supp/{id}
     defaults: { _controller: EsieaBlogBundle:Article:delete }
+esiea_blog_about:
+    path:     /about
+    defaults: { _controller: EsieaBlogBundle:Article:about }
+esiea_blog_contact:
+    path:     /contact
+    defaults: { _controller: EsieaBlogBundle:Article:contact }

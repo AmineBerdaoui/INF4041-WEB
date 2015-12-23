@@ -176,6 +176,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'esiea_blog_delete')), array (  '_controller' => 'Esiea\\BlogBundle\\Controller\\ArticleController::deleteAction',));
         }
 
+        // esiea_blog_about
+        if ($pathinfo === '/about') {
+            return array (  '_controller' => 'Esiea\\BlogBundle\\Controller\\ArticleController::aboutAction',  '_route' => 'esiea_blog_about',);
+        }
+
+        // esiea_blog_contact
+        if ($pathinfo === '/contact') {
+            return array (  '_controller' => 'Esiea\\BlogBundle\\Controller\\ArticleController::contactAction',  '_route' => 'esiea_blog_contact',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

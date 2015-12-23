@@ -43,7 +43,9 @@ class ArticleController extends Controller
       $article->setTitle("Votre titre")
       ->setContent("Le contenu de votre article")
       ->setArticleNumber("99")
-      ->setAuthor("BERDAOUI");
+      ->setAuthor("BERDAOUI")
+      ->setWriteDate(new \Datetime());
+
 
       $form = $this->get('form.factory')->createBuilder('form', $article)
 
@@ -164,5 +166,11 @@ class ArticleController extends Controller
       return $this->render('EsieaBlogBundle:Article:delete.html.twig', array(
         'article' => $article
         ));
+    }
+    public function aboutAction() {
+      return $this->render('EsieaBlogBundle:Article:about.html.twig');
+    }
+    public function contactAction() {
+      return $this->render('EsieaBlogBundle:Article:contact.html.twig');
     }
   }
